@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://b3illvfg3cheg"]
+
+[ext_resource type="FontFile" uid="uid://bi23m5e21csci" path="res://Fonts/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf" id="1_isvww"]
+
+[resource]
+base_font = ExtResource("1_isvww")
+variation_embolden = -0.2

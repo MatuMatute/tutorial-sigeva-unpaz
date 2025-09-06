@@ -1,0 +1,314 @@
+[gd_scene load_steps=19 format=3 uid="uid://q00la62s5ldb"]
+
+[ext_resource type="Script" uid="uid://drqf1obfi66m4" path="res://Scripts/main.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://c1ntqtosabjsh" path="res://Scripts/main_margin.gd" id="2_1bvp3"]
+[ext_resource type="Shader" uid="uid://b2d8rhm0ymp56" path="res://blur.gdshader" id="2_lquwl"]
+[ext_resource type="FontVariation" uid="uid://b3illvfg3cheg" path="res://Fonts/font_normal.tres" id="4_272bh"]
+[ext_resource type="FontVariation" uid="uid://cqwsdk8pf6boa" path="res://Fonts/font_negrita.tres" id="5_5vw27"]
+[ext_resource type="FontFile" uid="uid://bi23m5e21csci" path="res://Fonts/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf" id="5_7mycd"]
+[ext_resource type="Texture2D" uid="uid://7ul7vifcw86p" path="res://Assets/Clementina_parada.png" id="5_272bh"]
+[ext_resource type="Script" uid="uid://c2xmrk5utsnmw" path="res://Scripts/mascot.gd" id="5_lquwl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
+shader = ExtResource("2_lquwl")
+shader_parameter/blur = 7.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
+bg_color = Color(0.101961, 0.862745, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+bg_color = Color(3.92266e-06, 0.116, 0.376581, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(2.61109e-06, 0.0873075, 0.304166, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+
+[sub_resource type="Animation" id="Animation_lquwl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 243)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1bvp3"]
+resource_name = "transition1"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-256, 288), Vector2(160, 288)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(288, -80), Vector2(288, -80)]
+}
+
+[sub_resource type="Animation" id="Animation_5vw27"]
+resource_name = "transition3"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(64, 320), Vector2(960, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_kek77"]
+resource_name = "transition2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, 288), Vector2(64, 320)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(288, -80), Vector2(256, 64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7mycd"]
+_data = {
+&"RESET": SubResource("Animation_lquwl"),
+&"transition1": SubResource("Animation_1bvp3"),
+&"transition2": SubResource("Animation_kek77"),
+&"transition3": SubResource("Animation_5vw27")
+}
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h2yge")
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7mycd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+script = ExtResource("2_1bvp3")
+
+[node name="ProgressBar" type="ProgressBar" parent="MainMargin"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_7dm0k")
+max_value = 15.0
+rounded = true
+show_percentage = false
+
+[node name="TextContainer" type="MarginContainer" parent="MainMargin"]
+layout_mode = 2
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 128
+
+[node name="MainContainer" type="VBoxContainer" parent="MainMargin/TextContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="MainMargin/TextContainer/MainContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_272bh")
+theme_override_fonts/bold_font = ExtResource("5_5vw27")
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Description" type="RichTextLabel" parent="MainMargin/TextContainer/MainContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_272bh")
+theme_override_fonts/bold_font = ExtResource("5_5vw27")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Image" type="TextureRect" parent="MainMargin/TextContainer/MainContainer"]
+layout_mode = 2
+
+[node name="MainButton" type="Button" parent="MainMargin"]
+custom_minimum_size = Vector2(288, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("5_7mycd")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
+text = "Comenzar"
+
+[node name="Info" type="Button" parent="MainMargin"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_272bh")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
+text = "i"
+
+[node name="Mascot" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(192, 192)
+layout_mode = 0
+offset_left = -256.0
+offset_top = 243.0
+offset_right = 26.0
+offset_bottom = 507.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_272bh")
+stretch_mode = 2
+script = ExtResource("5_lquwl")
+
+[node name="DialogBox" type="PanelContainer" parent="Mascot"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vw27")
+
+[node name="BoxMargin" type="MarginContainer" parent="Mascot/DialogBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="DialogText" type="RichTextLabel" parent="Mascot/DialogBox/BoxMargin"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_272bh")
+theme_override_fonts/bold_font = ExtResource("5_5vw27")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="MascotAnimations" type="AnimationPlayer" parent="Mascot"]
+libraries = {
+&"": SubResource("AnimationLibrary_7mycd")
+}
+
+[node name="Version" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.235294)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.1.0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="value_changed" from="MainMargin/ProgressBar" to="Mascot" method="_on_progress_bar_value_changed"]
+[connection signal="pressed" from="MainMargin/MainButton" to="MainMargin" method="_on_main_button_pressed"]
+[connection signal="animation_finished" from="Mascot/MascotAnimations" to="MainMargin" method="_on_mascot_animations_animation_finished"]
+[connection signal="animation_finished" from="Mascot/MascotAnimations" to="Mascot" method="_on_mascot_animations_animation_finished"]
