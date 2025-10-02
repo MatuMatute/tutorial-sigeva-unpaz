@@ -27,6 +27,12 @@ const descriptionTexts: Array = [
 	"PRUEBA1"
 ];
 
+const buttonTexts: Array = [
+	"¡Estoy listo/a!",
+	"¡Entendido!",
+	"Siguiente"
+]
+
 func _ready() -> void:
 	progressBar.hide();
 	title.text = titleTexts[0];
@@ -40,18 +46,16 @@ func _on_mascot_animations_animation_finished(anim_name: StringName) -> void:
 	match anim_name:
 		"transition1":
 			mainButton.show();
-			mainButton.text = "¡Estoy listo/a!"
+			mainButton.text = buttonTexts[0]
 		"transition2":
 			mainButton.show();
-			mainContainer.alignment =BoxContainer.ALIGNMENT_BEGIN;
-			mainButton.text = "¡Entendido!"
+			mainContainer.alignment = BoxContainer.ALIGNMENT_BEGIN;
+			mainButton.text = buttonTexts[1]
 			mainButton.size_flags_horizontal = Control.SIZE_SHRINK_END;
 		"transition3":
 			mainButton.hide();
-			mainButton.text = "Siguiente"
+			mainButton.text = buttonTexts[2]
 			mainButton.size_flags_horizontal = Control.SIZE_SHRINK_CENTER;
-	
-	# mainButton.show();
 
 func _on_main_button_pressed() -> void:
 	progressBar.set_value(progressBar.value + 1.0);

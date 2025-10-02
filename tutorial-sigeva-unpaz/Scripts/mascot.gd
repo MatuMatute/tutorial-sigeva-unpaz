@@ -16,8 +16,11 @@ const mascotDialogs: Array[String] = [
 Soy Clementina y voy a ayudarte a completar tu CVar.
 ¿Estás listo/a para comenzar?",
 	"Tener tu [b]CVAR al día[/b] es como tener tu mochila lista:
-¡todo preparado para tu próximo desafío académico!"
+¡todo preparado para tu próximo desafío académico!",
+	"Este diálogo no debería aparecer"
 ];
+
+var textIndex: int;
 
 func _ready() -> void:
 	mascotAnimations.play("RESET");
@@ -26,7 +29,7 @@ func _ready() -> void:
 	dialogText.text = mascotDialogs[0];
 
 func _on_progress_bar_value_changed(value: float) -> void:
-	var textIndex: int = int(value);
+	textIndex = int(value);
 	
 	dialogBox.hide();
 	show();
@@ -34,12 +37,19 @@ func _on_progress_bar_value_changed(value: float) -> void:
 	mascotAnimations.play("transition" + str(textIndex));
 
 func _on_mascot_animations_animation_finished(anim_name: StringName) -> void:
+	if (anim_name != "RESET" and anim_name != "growBubble"):
+		dialogText.text = mascotDialogs[textIndex];
+		dialogBox.pivot_offset =  dialogBox.position.direction_to(position) * dialogBox.size;
+		dialogText.visible_ratio = 0.0;
+		mascotAnimations.play("growBubble");
+	if (anim_name == "growBubble"): showDialog();
 	match anim_name:
 		"transition1":
-			dialogText.text = mascotDialogs[1];
 			texture = clementinaTextures[1];
-			dialogBox.show();
 		"transition2":
-			dialogText.text = mascotDialogs[2];
 			texture = clementinaTextures[2];
-			dialogBox.show(); 
+
+func showDialog() -> void:
+	var tween = create_tween();
+	tween.tween_method(dialogText.set_visible_ratio, 0.0, 1.0, 3.0);
+	tween.play();

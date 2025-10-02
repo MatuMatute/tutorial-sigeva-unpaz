@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://q00la62s5ldb"]
+[gd_scene load_steps=20 format=3 uid="uid://q00la62s5ldb"]
 
 [ext_resource type="Script" uid="uid://drqf1obfi66m4" path="res://Scripts/main.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://c1ntqtosabjsh" path="res://Scripts/main_margin.gd" id="2_1bvp3"]
@@ -20,15 +20,15 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
-bg_color = Color(3.92266e-06, 0.116, 0.376581, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(2.61109e-06, 0.0873075, 0.304166, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
-bg_color = Color(2.61109e-06, 0.0873075, 0.304166, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+bg_color = Color(3.92266e-06, 0.116, 0.376581, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
@@ -58,10 +58,34 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("DialogBox:position")
+tracks/1/path = NodePath("DialogBox:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DialogBox:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DialogBox:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -96,22 +120,6 @@ tracks/1/keys = {
 "values": [Vector2(288, -80), Vector2(288, -80)]
 }
 
-[sub_resource type="Animation" id="Animation_5vw27"]
-resource_name = "transition3"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(64, 320), Vector2(960, 320)]
-}
-
 [sub_resource type="Animation" id="Animation_kek77"]
 resource_name = "transition2"
 tracks/0/type = "value"
@@ -139,9 +147,66 @@ tracks/1/keys = {
 "values": [Vector2(288, -80), Vector2(256, 64)]
 }
 
+[sub_resource type="Animation" id="Animation_5vw27"]
+resource_name = "transition3"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(64, 320), Vector2(960, 320)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(288, -80), Vector2(-672, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_4c57u"]
+resource_name = "growBubble"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogBox:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogBox:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7mycd"]
 _data = {
 &"RESET": SubResource("Animation_lquwl"),
+&"growBubble": SubResource("Animation_4c57u"),
 &"transition1": SubResource("Animation_1bvp3"),
 &"transition2": SubResource("Animation_kek77"),
 &"transition3": SubResource("Animation_5vw27")
@@ -228,10 +293,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("5_7mycd")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_272bh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_272bh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_272bh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_272bh")
 text = "Comenzar"
 
 [node name="Info" type="Button" parent="MainMargin"]
@@ -241,10 +306,10 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("4_272bh")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_272bh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_272bh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_272bh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_272bh")
 text = "i"
 
 [node name="Mascot" type="TextureRect" parent="."]
@@ -253,7 +318,7 @@ layout_mode = 0
 offset_left = -256.0
 offset_top = 243.0
 offset_right = 26.0
-offset_bottom = 507.0
+offset_bottom = 507.00018
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_272bh")
@@ -262,9 +327,18 @@ script = ExtResource("5_lquwl")
 
 [node name="DialogBox" type="PanelContainer" parent="Mascot"]
 custom_minimum_size = Vector2(640, 0)
-layout_mode = 0
-offset_right = 640.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -0.15200001
+anchor_right = 1.0
+anchor_bottom = -0.15200001
+offset_left = -282.0
+offset_top = 40.12803
+offset_right = 358.00073
+offset_bottom = 80.12805
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(0, 128)
 theme_override_styles/panel = SubResource("StyleBoxFlat_5vw27")
 
 [node name="BoxMargin" type="MarginContainer" parent="Mascot/DialogBox"]
@@ -304,7 +378,7 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "0.1.0"
+text = "0.1.1"
 horizontal_alignment = 2
 vertical_alignment = 2
 

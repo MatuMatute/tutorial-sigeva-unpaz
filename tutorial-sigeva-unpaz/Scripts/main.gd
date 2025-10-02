@@ -1,6 +1,6 @@
 extends Control
 
-# El siguiente código manipula los círculos que aparecen y se mueven en el fondo
+# Este script manipula los círculos que aparecen y se mueven en el fondo
 var orange_circle_position: Vector2 = Vector2(1280, randf_range(0, 360));
 var aquamarine_circle_position: Vector2 = Vector2(1280, randf_range(360, 720));
 var blue_circle_position: Vector2 = Vector2(0, randf_range(360, 720));
