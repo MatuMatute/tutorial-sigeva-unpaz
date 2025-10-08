@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5cdswkts0mls"
-path="res://.godot/imported/Clementina_parada.png-81cc0cc0946ac4f1215c83e4bc307f00.ctex"
+uid="uid://c7mrlmaoi2ew1"
+path="res://.godot/imported/cambio_contraseña.png-ddcf43b99571aa931300a4db337fe8e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Clementina_parada.png"
-dest_files=["res://.godot/imported/Clementina_parada.png-81cc0cc0946ac4f1215c83e4bc307f00.ctex"]
+source_file="res://Assets/Tutorial/cambio_contraseña.png"
+dest_files=["res://.godot/imported/cambio_contraseña.png-ddcf43b99571aa931300a4db337fe8e3.ctex"]
 
 [params]
 

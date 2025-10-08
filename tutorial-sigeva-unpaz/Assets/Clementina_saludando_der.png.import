@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5cdswkts0mls"
-path="res://.godot/imported/Clementina_parada.png-81cc0cc0946ac4f1215c83e4bc307f00.ctex"
+uid="uid://qlhvp2olakdh"
+path="res://.godot/imported/Clementina_saludando_der.png-c585bb05ba474e6e5a69b4f00d1acb92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Clementina_parada.png"
-dest_files=["res://.godot/imported/Clementina_parada.png-81cc0cc0946ac4f1215c83e4bc307f00.ctex"]
+source_file="res://Assets/Clementina_saludando_der.png"
+dest_files=["res://.godot/imported/Clementina_saludando_der.png-c585bb05ba474e6e5a69b4f00d1acb92.ctex"]
 
 [params]
 
