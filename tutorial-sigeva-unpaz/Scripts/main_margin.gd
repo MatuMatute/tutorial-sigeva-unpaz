@@ -1,4 +1,4 @@
-extends MarginContainer
+extends MarginContainer;
 
 @onready var progressBar: ProgressBar = $ProgressBar;
 @onready var mainContainer: VBoxContainer = $TextContainer/MainContainer;

@@ -1,20 +1,14 @@
-[gd_scene load_steps=34 format=3 uid="uid://q00la62s5ldb"]
+[gd_scene load_steps=27 format=3 uid="uid://q00la62s5ldb"]
 
-[ext_resource type="Script" uid="uid://drqf1obfi66m4" path="res://Scripts/main.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://c1ntqtosabjsh" path="res://Scripts/main_margin.gd" id="2_1bvp3"]
-[ext_resource type="Shader" uid="uid://b2d8rhm0ymp56" path="res://blur.gdshader" id="2_lquwl"]
+[ext_resource type="Texture2D" uid="uid://c2jxpj223g87v" path="res://Assets/Fondos/fondo_guia.png" id="2_4c57u"]
 [ext_resource type="FontVariation" uid="uid://b3illvfg3cheg" path="res://Fonts/font_normal.tres" id="4_272bh"]
 [ext_resource type="FontVariation" uid="uid://cqwsdk8pf6boa" path="res://Fonts/font_negrita.tres" id="5_5vw27"]
 [ext_resource type="FontFile" uid="uid://bi23m5e21csci" path="res://Fonts/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://b5cdswkts0mls" path="res://Assets/Clementina_parada.png" id="5_272bh"]
 [ext_resource type="Script" uid="uid://c2xmrk5utsnmw" path="res://Scripts/mascot.gd" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://05gmnut8t3co" path="res://Assets/Tutorial/comprobacion_mail.png" id="6_4c57u"]
-[ext_resource type="FontFile" uid="uid://bskqnlkbql10a" path="res://Fonts/Nunito-Bold.ttf" id="9_kek77"]
 [ext_resource type="Texture2D" uid="uid://c34spk53dlwq5" path="res://Assets/Clementina_saludando_izq.png" id="11_efxa6"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
-shader = ExtResource("2_lquwl")
-shader_parameter/blur = 7.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kek77"]
 bg_color = Color(0.69813675, 0.8383168, 0.9999997, 1)
@@ -59,20 +53,6 @@ corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 48
-corner_radius_top_right = 48
-corner_radius_bottom_right = 48
-corner_radius_bottom_left = 48
-
-[sub_resource type="FontVariation" id="FontVariation_4c57u"]
-base_font = ExtResource("9_kek77")
-variation_embolden = -0.5
-
-[sub_resource type="FontVariation" id="FontVariation_efxa6"]
-base_font = SubResource("FontVariation_4c57u")
-
 [sub_resource type="Animation" id="Animation_lquwl"]
 length = 0.001
 tracks/0/type = "value"
@@ -90,271 +70,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("DialogBox:visible")
+tracks/1/path = NodePath(".:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("DialogBox:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("DialogBox:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:texture")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("5_272bh")]
-}
-
-[sub_resource type="Animation" id="Animation_4c57u"]
-resource_name = "growBubble"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DialogBox:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DialogBox:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_1bvp3"]
-resource_name = "transition1"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-288, 256), Vector2(128, 256)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DialogBox:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(288, -80), Vector2(336, -96)]
-}
-
-[sub_resource type="Animation" id="Animation_kek77"]
-resource_name = "transition2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(128, 256), Vector2(64, 320)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DialogBox:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(288, -80), Vector2(320, 64)]
-}
-
-[sub_resource type="Animation" id="Animation_5vw27"]
-resource_name = "transition3"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(64, 320), Vector2(920, 320)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DialogBox:position")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(288, -80), Vector2(-380, -140)]
-}
-
-[sub_resource type="Animation" id="Animation_efxa6"]
-resource_name = "transition4"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(920, 320), Vector2(160, 224)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DialogBox:position")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(288, -80), Vector2(320, -32)]
-}
-
-[sub_resource type="Animation" id="Animation_dg77c"]
-resource_name = "transition5"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(160, 224), Vector2(920, 320)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DialogBox:position")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(352, -32), Vector2(-416, 32)]
-}
-
-[sub_resource type="Animation" id="Animation_ycdy4"]
-resource_name = "transition6"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(920, 320), Vector2(920, 224)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DialogBox:position")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(352, -32), Vector2(-320, -96)]
-}
-
-[sub_resource type="Animation" id="Animation_w48qg"]
-resource_name = "transition7"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(920, 224), Vector2(920, 320)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DialogBox:position")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-368, -192)]
 }
 
 [sub_resource type="Animation" id="Animation_vivmo"]
@@ -385,11 +108,119 @@ tracks/1/keys = {
 "values": [ExtResource("5_272bh"), ExtResource("11_efxa6")]
 }
 
+[sub_resource type="Animation" id="Animation_1bvp3"]
+resource_name = "transition1"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-288, 256), Vector2(128, 256)]
+}
+
+[sub_resource type="Animation" id="Animation_kek77"]
+resource_name = "transition2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(128, 256), Vector2(64, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_5vw27"]
+resource_name = "transition3"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(64, 320), Vector2(920, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_efxa6"]
+resource_name = "transition4"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(920, 320), Vector2(160, 224)]
+}
+
+[sub_resource type="Animation" id="Animation_dg77c"]
+resource_name = "transition5"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, 224), Vector2(920, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_ycdy4"]
+resource_name = "transition6"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(920, 320), Vector2(920, 224)]
+}
+
+[sub_resource type="Animation" id="Animation_w48qg"]
+resource_name = "transition7"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(920, 224), Vector2(920, 320)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7mycd"]
 _data = {
 &"RESET": SubResource("Animation_lquwl"),
 &"despedida": SubResource("Animation_vivmo"),
-&"growBubble": SubResource("Animation_4c57u"),
 &"transition1": SubResource("Animation_1bvp3"),
 &"transition2": SubResource("Animation_kek77"),
 &"transition3": SubResource("Animation_5vw27"),
@@ -406,16 +237,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h2yge")
 
-[node name="Blur" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_7mycd")
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_4c57u")
 
 [node name="MainMargin" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -532,40 +362,14 @@ custom_minimum_size = Vector2(340, 266)
 layout_mode = 0
 offset_left = -256.0
 offset_top = 243.0
-offset_right = 84.00037
-offset_bottom = 509.00024
+offset_right = 84.00049
+offset_bottom = 509.00012
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_272bh")
 expand_mode = 3
 stretch_mode = 5
 script = ExtResource("5_lquwl")
-
-[node name="DialogBox" type="PanelContainer" parent="Mascot"]
-custom_minimum_size = Vector2(240, 100)
-layout_mode = 0
-offset_right = 425.0299
-offset_bottom = 119.0
-scale = Vector2(1e-05, 1e-05)
-theme_override_styles/panel = SubResource("StyleBoxFlat_5vw27")
-
-[node name="BoxMargin" type="MarginContainer" parent="Mascot/DialogBox"]
-layout_mode = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
-
-[node name="DialogText" type="RichTextLabel" parent="Mascot/DialogBox/BoxMargin"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = SubResource("FontVariation_4c57u")
-theme_override_fonts/bold_font = SubResource("FontVariation_efxa6")
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 24
-bbcode_enabled = true
-fit_content = true
 
 [node name="MascotAnimations" type="AnimationPlayer" parent="Mascot"]
 libraries = {
@@ -587,7 +391,7 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "0.2.0"
+text = "0.2.1"
 horizontal_alignment = 2
 vertical_alignment = 2
 
