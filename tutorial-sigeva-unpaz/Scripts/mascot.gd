@@ -69,7 +69,6 @@ func _on_progress_bar_value_changed(value: float) -> void:
 	var previousTextIndex: int = textIndex; 
 	textIndex = int(value);
 	texture = clementinaTextures[0];
-	print("anterior:" + str(previousTextIndex) + " " + "actual:" + str(textIndex));
 	
 	if (previousTextIndex < 5 and textIndex < 5):
 		if (!visible): show();
@@ -181,6 +180,8 @@ func _on_mascot_animations_animation_finished(anim_name: StringName) -> void:
 			else:
 				mascotAnimations.play("transition7",  -1, 0.0, true);
 				mascotAnimations.animation_finished.emit("transition7");
+		"despedida":
+			_ready();
 
 func addDialogBox() -> void:
 	if (textIndex == 5):

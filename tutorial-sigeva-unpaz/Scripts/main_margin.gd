@@ -63,7 +63,8 @@ const buttonTexts: Array = [
 	"¡Entendido!",
 	"Siguiente",
 	"Finalizar",
-	"Comenzar de nuevo"
+	"Comenzar de nuevo",
+	"Comenzar"
 ];
 
 const images: Array = [
@@ -82,6 +83,8 @@ var textIndex: int = 1;
 
 func _ready() -> void:
 	backButton.hide();
+	progressBar.set_value(1.0);
+	mainButton.text = buttonTexts[5];
 	title.text = titleTexts[0];
 	description.text = descriptionTexts[0];
 
@@ -183,7 +186,7 @@ func _on_main_button_pressed() -> void:
 		buttonContainer.hide();
 		infoButton.hide();
 	else:
-		get_tree().reload_current_scene();
+		_ready();
 
 func _on_back_button_pressed() -> void:
 	title.text = "";
