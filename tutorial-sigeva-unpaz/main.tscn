@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://q00la62s5ldb"]
+[gd_scene load_steps=35 format=3 uid="uid://q00la62s5ldb"]
 
+[ext_resource type="Script" uid="uid://cp4jaovs7nalj" path="res://main.gd" id="1_dg77c"]
 [ext_resource type="Script" uid="uid://c1ntqtosabjsh" path="res://Scripts/main_margin.gd" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://c2jxpj223g87v" path="res://Assets/Fondos/fondo_guia.png" id="2_4c57u"]
 [ext_resource type="Texture2D" uid="uid://72gbdc34hq4w" path="res://Assets/Under.png" id="3_efxa6"]
@@ -53,7 +54,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-256, 243)]
+"values": [Vector2(-288, 243)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -124,7 +125,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(128, 256), Vector2(64, 320)]
+"values": [Vector2(128, 256), Vector2(64, 288)]
 }
 
 [sub_resource type="Animation" id="Animation_5vw27"]
@@ -140,7 +141,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(64, 320), Vector2(920, 320)]
+"values": [Vector2(64, 288), Vector2(920, 320)]
 }
 
 [sub_resource type="Animation" id="Animation_efxa6"]
@@ -218,6 +219,186 @@ _data = {
 &"transition8": SubResource("Animation_w48qg")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efxa6"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
+font = ExtResource("5_7mycd")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dg77c"]
+line_spacing = 20.0
+font = ExtResource("5_7mycd")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_yaehf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMargin:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mascot:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Credits:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Credits:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2cqfq"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMargin:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mascot:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Credits:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Credits:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_074og"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMargin:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mascot:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Credits:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Credits:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_074og"]
+_data = {
+&"RESET": SubResource("Animation_yaehf"),
+&"fade_in": SubResource("Animation_2cqfq"),
+&"fade_out": SubResource("Animation_074og")
+}
+
 [node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -225,6 +406,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dg77c")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -258,7 +440,9 @@ texture_progress = ExtResource("4_dg77c")
 
 [node name="TextContainer" type="MarginContainer" parent="MainMargin"]
 layout_mode = 2
+theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 96
 
 [node name="MainContainer" type="VBoxContainer" parent="MainMargin/TextContainer"]
@@ -308,6 +492,7 @@ size_flags_vertical = 8
 dragging_enabled = false
 
 [node name="BackButton" type="Button" parent="MainMargin/ButtonContainer"]
+visible = false
 custom_minimum_size = Vector2(128, 70)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -347,10 +532,10 @@ text = "i"
 [node name="Mascot" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(340, 266)
 layout_mode = 0
-offset_left = -256.0
+offset_left = -288.0
 offset_top = 243.0
-offset_right = 84.00049
-offset_bottom = 509.00012
+offset_right = 52.00049
+offset_bottom = 509.00024
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("5_272bh")
@@ -363,7 +548,64 @@ libraries = {
 &"": SubResource("AnimationLibrary_7mycd")
 }
 
+[node name="Credits" type="Panel" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1088, 544)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_efxa6")
+
+[node name="MarginCredits" type="MarginContainer" parent="Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 32
+
+[node name="CreditsContainer" type="VBoxContainer" parent="Credits/MarginCredits"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Team" type="Label" parent="Credits/MarginCredits/CreditsContainer"]
+layout_mode = 2
+text = "Equipo de Trabajo"
+label_settings = SubResource("LabelSettings_efxa6")
+
+[node name="Members" type="Label" parent="Credits/MarginCredits/CreditsContainer"]
+layout_mode = 2
+text = "Secretaria Académica: Lic. Paula Zabaleta
+Directora General de Acceso y Apoyo al Estudiante: Lic. Luciana Aguilar
+Directora de Pasantía y Graduados: Lic. Julia Thea
+Dirección: Eda Lía Artola
+Programación: Matías Nahuel González Sandoval
+Diseño: Florencia Belate Dietrich
+Coordinación: Néstor Arriola
+Hace click para regresar a la guía"
+label_settings = SubResource("LabelSettings_dg77c")
+
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+
+[node name="CreditsAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_074og")
+}
 
 [node name="Version" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.235294)
@@ -378,7 +620,7 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "0.2.2"
+text = "0.2.3"
 horizontal_alignment = 2
 vertical_alignment = 2
 
@@ -386,5 +628,6 @@ vertical_alignment = 2
 [connection signal="value_changed" from="MainMargin/TextureProgressBar" to="Mascot" method="_on_progress_bar_value_changed"]
 [connection signal="pressed" from="MainMargin/ButtonContainer/BackButton" to="MainMargin" method="_on_back_button_pressed"]
 [connection signal="pressed" from="MainMargin/ButtonContainer/MainButton" to="MainMargin" method="_on_main_button_pressed"]
+[connection signal="pressed" from="MainMargin/Info" to="." method="_on_info_pressed"]
 [connection signal="animation_finished" from="Mascot/MascotAnimations" to="MainMargin" method="_on_mascot_animations_animation_finished"]
 [connection signal="animation_finished" from="Mascot/MascotAnimations" to="Mascot" method="_on_mascot_animations_animation_finished"]

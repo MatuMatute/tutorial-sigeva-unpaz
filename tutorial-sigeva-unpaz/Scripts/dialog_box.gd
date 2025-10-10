@@ -41,7 +41,6 @@ func showDialog() -> void:
 	textTween.tween_method(dialogText.set_visible_ratio, 0.0, 1.0, tweenDuration);
 	textTween.finished.connect(textTween.kill);
 	if (isLastDialog):
-		textTween.finished.connect(mainMargin.mainButton.show);
-		textTween.finished.connect(mainMargin.backButton.show);
+		textTween.finished.connect(mainMargin.buttonContainer.show);
 	else: textTween.finished.connect(get_parent().addDialogBox)
 	textTween.play();

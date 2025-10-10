@@ -15,8 +15,8 @@ func _draw() -> void:
 	draw_rect(Rect2(0, 0, 1280, 720), Color.LAVENDER);
 	draw_circle(orange_circle_position, 256.0, Color.LIGHT_SALMON);
 	draw_circle(blue_circle_position, 256.0, Color.SKY_BLUE);
-	#draw_circle(lily_circle_position, 160.0, Color.SKY_BLUE);
-	#draw_circle(aquamarine_circle_position, 160.0, Color.LIGHT_SALMON);
+	draw_circle(lily_circle_position, 160.0, Color.SKY_BLUE);
+	draw_circle(aquamarine_circle_position, 160.0, Color.LIGHT_SALMON);
 
 func _process(_delta: float) -> void:
 	orange_circle_position += orange_circle_speed;

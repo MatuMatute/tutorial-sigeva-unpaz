@@ -7,6 +7,7 @@ extends MarginContainer;
 @onready var imageContainer: PanelContainer = $TextContainer/MainContainer/ImageContainer;
 @onready var image: TextureRect = $TextContainer/MainContainer/ImageContainer/Image;
 @onready var main: Control = get_parent();
+@onready var buttonContainer: HSplitContainer = $ButtonContainer;
 @onready var mainButton: Button = $ButtonContainer/MainButton;
 @onready var backButton: Button = $ButtonContainer/BackButton;
 @onready var infoButton: Button = $Info;
@@ -15,8 +16,7 @@ const titleTexts: Array = [
 	"[b]Guía paso a paso[/b]\npara completar tu [b]CVAR[/b]",
 	"",
 	"",
-	"
-	[b]¿Qué es CVar?[/b]",
+	"[b]¿Qué es CVar?[/b]",
 	"[b]Objetivos[/b]",
 	"[b]Formulario de registro[/b]",
 	"[b]Confirmación por mail[/b]",
@@ -38,9 +38,9 @@ const descriptionTexts: Array = [
 	"",
 	"",
 	"
-		El [b]Curriculum Vitae Argentino[/b] (CVar) es una [b]herramienta digital[/b] donde los investigadores, docentes 
-		y becarios registran su producción académica y profesional.
-		Tenerlo actualizado facilita tu participación en convocatorias, becas y proyectos de investigación.",
+El [b]Curriculum Vitae Argentino[/b] (CVar) es una [b]herramienta digital[/b] donde los investigadores, docentes 
+y becarios registran su producción académica y profesional.
+Tenerlo actualizado facilita tu participación en convocatorias, becas y proyectos de investigación.",
 	"
 	
 [b]Módulo 1: Registro[/b]
@@ -134,6 +134,7 @@ func _on_mascot_animations_animation_finished(anim_name: StringName) -> void:
 			title.text = titleTexts[textIndex];
 			description.text = descriptionTexts[textIndex];
 		"transition3":
+			backButton.show();
 			mainContainer.alignment = BoxContainer.ALIGNMENT_BEGIN;
 			mainButton.text = buttonTexts[1];
 			$ButtonContainer.size_flags_horizontal = Control.SIZE_SHRINK_END;
@@ -162,7 +163,9 @@ func _on_mascot_animations_animation_finished(anim_name: StringName) -> void:
 			mainButton.text = buttonTexts[4];
 			mainContainer.alignment = BoxContainer.ALIGNMENT_CENTER;
 			$ButtonContainer.size_flags_horizontal = Control.SIZE_SHRINK_CENTER;
-			mainButton.show();
+			backButton.hide()
+			infoButton.show()
+			buttonContainer.show();
 
 func _on_main_button_pressed() -> void:
 	if (progressBar.value < 15.0):
@@ -170,8 +173,7 @@ func _on_main_button_pressed() -> void:
 		description.text = "";
 		imageContainer.hide();
 		progressBar.set_value(progressBar.value + 1.0);
-		mainButton.hide();
-		backButton.hide();
+		buttonContainer.hide();
 		infoButton.hide();
 	else:
 		get_tree().reload_current_scene();
@@ -181,6 +183,4 @@ func _on_back_button_pressed() -> void:
 	description.text = "";
 	imageContainer.hide();
 	progressBar.set_value(progressBar.value - 1.0);
-	mainButton.hide();
-	backButton.hide();
-	infoButton.hide();
+	buttonContainer.hide();
