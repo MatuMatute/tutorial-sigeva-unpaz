@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c34spk53dlwq5"
-path="res://.godot/imported/Clementina_saludando_izq.png-bbe99c50b26965bd724e4bc1c9ab0e38.ctex"
+uid="uid://k153ur431qff"
+path="res://.godot/imported/Pensando.png-22782a13e6163a09503fc80cc6fae76a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Clementina_saludando_izq.png"
-dest_files=["res://.godot/imported/Clementina_saludando_izq.png-bbe99c50b26965bd724e4bc1c9ab0e38.ctex"]
+source_file="res://Assets/Clementina/Pensando.png"
+dest_files=["res://.godot/imported/Pensando.png-22782a13e6163a09503fc80cc6fae76a.ctex"]
 
 [params]
 

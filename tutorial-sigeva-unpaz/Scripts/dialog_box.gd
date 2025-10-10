@@ -1,7 +1,7 @@
 extends PanelContainer;
 class_name DialogBox;
 
-const dialogBoxScene: PackedScene = preload("res://dialog_box.tscn");
+const dialogBoxScene: PackedScene = preload("res://Scenes/dialog_box.tscn");
 const textReadSpeed = 0.03;
 
 @onready var dialogText: RichTextLabel = $BoxMargin/DialogText;

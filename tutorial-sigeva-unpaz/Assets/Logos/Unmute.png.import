@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://civ2235rkeigi"
-path="res://.godot/imported/Clementina_guiñando.png-73a756add5c28c068fb9318581dd1256.ctex"
+uid="uid://dm5x4aaxou1tl"
+path="res://.godot/imported/Unmute.png-fea0b6e732bb4424d76cf3f4c46bd09d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Clementina_guiñando.png"
-dest_files=["res://.godot/imported/Clementina_guiñando.png-73a756add5c28c068fb9318581dd1256.ctex"]
+source_file="res://Assets/Logos/Unmute.png"
+dest_files=["res://.godot/imported/Unmute.png-fea0b6e732bb4424d76cf3f4c46bd09d.ctex"]
 
 [params]
 

@@ -5,11 +5,11 @@ extends TextureRect;
 @onready var mascotAnimations: AnimationPlayer = $MascotAnimations;
 
 const clementinaTextures: Array[Texture2D] = [
-	preload("res://Assets/Clementina_parada.png"),
-	preload("res://Assets/Clementina_saludando_der.png"),
-	preload("res://Assets/Clementina_saludando_izq.png"),
-	preload("res://Assets/Clementina_pensando.png"),
-	preload("res://Assets/Clementina_guiñando.png")
+	preload("res://Assets/Clementina/Parada.png"),
+	preload("res://Assets/Clementina/Saludando_der.png"),
+	preload("res://Assets/Clementina/Saludando_izq.png"),
+	preload("res://Assets/Clementina/Pensando.png"),
+	preload("res://Assets/Clementina/Guiñando.png")
 ];
 
 const mascotDialogs: Array[String] = [

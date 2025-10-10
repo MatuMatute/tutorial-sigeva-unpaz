@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cn71txd25pfdg"]
 
-[ext_resource type="Script" uid="uid://b2asd6i4j0xjv" path="res://Scripts/dialog_box.gd" id="1_1ki1k"]
-[ext_resource type="FontFile" uid="uid://bskqnlkbql10a" path="res://Fonts/Nunito-Bold.ttf" id="1_hwgul"]
+[ext_resource type="Script" uid="uid://b2asd6i4j0xjv" path="res://Scripts/dialog_box.gd" id="1_sqs0f"]
+[ext_resource type="FontFile" uid="uid://bskqnlkbql10a" path="res://Fonts/Nunito-Bold.ttf" id="2_ccvmi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
 bg_color = Color(1, 1, 1, 1)
@@ -11,7 +11,7 @@ corner_radius_bottom_right = 48
 corner_radius_bottom_left = 48
 
 [sub_resource type="FontVariation" id="FontVariation_4c57u"]
-base_font = ExtResource("1_hwgul")
+base_font = ExtResource("2_ccvmi")
 variation_embolden = -0.5
 
 [sub_resource type="FontVariation" id="FontVariation_efxa6"]
@@ -23,7 +23,7 @@ offset_right = 240.0
 offset_bottom = 100.0
 scale = Vector2(1e-05, 1e-05)
 theme_override_styles/panel = SubResource("StyleBoxFlat_5vw27")
-script = ExtResource("1_1ki1k")
+script = ExtResource("1_sqs0f")
 
 [node name="BoxMargin" type="MarginContainer" parent="."]
 layout_mode = 2

@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Tutorial SIGEVA-UNPAZ"
+config/version="1.0.0"
 run/main_scene="uid://q00la62s5ldb"
 config/features=PackedStringArray("4.5", "Mobile")
 boot_splash/bg_color=Color(1, 1, 1, 1)
