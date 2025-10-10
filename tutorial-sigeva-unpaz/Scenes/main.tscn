@@ -703,7 +703,7 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "1.0.0"
+text = "v1.0.1"
 horizontal_alignment = 2
 vertical_alignment = 2
 
@@ -744,8 +744,9 @@ stretch_mode = 3
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_k12tt")
-volume_db = -10.0
+volume_db = -15.0
 autoplay = true
+parameters/looping = true
 
 [node name="MainAnimation" type="AnimationPlayer" parent="."]
 libraries = {
