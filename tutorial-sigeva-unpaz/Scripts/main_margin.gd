@@ -78,7 +78,7 @@ const images: Array = [
 	preload("res://Assets/Tutorial/imprimir_cv.png")
 ];
 
-var textIndex: int;
+var textIndex: int = 1;
 
 func _ready() -> void:
 	backButton.hide();
@@ -86,6 +86,7 @@ func _ready() -> void:
 	description.text = descriptionTexts[0];
 
 func _on_progress_bar_value_changed(value: float) -> void:
+	var previousTextIndex = textIndex;
 	textIndex = int(value);
 	
 	match textIndex:
@@ -106,14 +107,14 @@ func _on_progress_bar_value_changed(value: float) -> void:
 			image.texture = images[3];
 			title.text = titleTexts[textIndex];
 		9:
-			imageContainer.show();
-			image.texture = images[4];
-			title.text = titleTexts[textIndex];
-		10:
-			imageContainer.hide();
-		12:
-			imageContainer.hide();
-		13:
+			if (textIndex > previousTextIndex):
+				imageContainer.show();
+				image.texture = images[4];
+				title.text = titleTexts[textIndex];
+		10: imageContainer.hide();
+		12: imageContainer.hide();
+		13: 
+			mainButton.text = buttonTexts[2];
 			imageContainer.hide();
 		14:
 			mainButton.text = buttonTexts[3];
@@ -125,11 +126,11 @@ func _on_progress_bar_value_changed(value: float) -> void:
 			title.text = "";
 
 func _on_mascot_animations_animation_finished(anim_name: StringName) -> void:
-	textIndex = int(progressBar.value);
-	
 	match anim_name:
 		"transition2":
+			backButton.hide();
 			$TextContainer.add_theme_constant_override("margin_bottom", 32);
+			$ButtonContainer.size_flags_horizontal = Control.SIZE_SHRINK_CENTER;
 			mainButton.text = buttonTexts[0];
 			title.text = titleTexts[textIndex];
 			description.text = descriptionTexts[textIndex];
@@ -144,10 +145,16 @@ func _on_mascot_animations_animation_finished(anim_name: StringName) -> void:
 			mainButton.text = buttonTexts[2];
 			title.text = titleTexts[textIndex];
 			description.text = descriptionTexts[textIndex];
+		"transition5":
+			if (textIndex == 9):
+				imageContainer.show();
+				image.texture = images[4];
+				title.text = titleTexts[textIndex];
 		"transition6":
-			imageContainer.show();
-			image.texture = images[5];
-			title.text = titleTexts[textIndex];
+			if (textIndex == 11):
+				imageContainer.show();
+				image.texture = images[5];
+				title.text = titleTexts[textIndex];
 		"transition7":
 			imageContainer.show();
 			image.texture = images[6];

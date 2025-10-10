@@ -597,7 +597,7 @@ Dirección: Eda Lía Artola
 Programación: Matías Nahuel González Sandoval
 Diseño: Florencia Belate Dietrich
 Coordinación: Néstor Arriola
-Hace click para regresar a la guía"
+Haz click para regresar a la guía"
 label_settings = SubResource("LabelSettings_dg77c")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
@@ -620,7 +620,7 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "0.2.3"
+text = "0.3.0"
 horizontal_alignment = 2
 vertical_alignment = 2
 
