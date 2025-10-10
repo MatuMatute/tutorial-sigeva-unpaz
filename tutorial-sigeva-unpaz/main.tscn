@@ -2,27 +2,15 @@
 
 [ext_resource type="Script" uid="uid://c1ntqtosabjsh" path="res://Scripts/main_margin.gd" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://c2jxpj223g87v" path="res://Assets/Fondos/fondo_guia.png" id="2_4c57u"]
+[ext_resource type="Texture2D" uid="uid://72gbdc34hq4w" path="res://Assets/Under.png" id="3_efxa6"]
 [ext_resource type="FontVariation" uid="uid://b3illvfg3cheg" path="res://Fonts/font_normal.tres" id="4_272bh"]
+[ext_resource type="Texture2D" uid="uid://gq4spfbkaut" path="res://Assets/Progress.png" id="4_dg77c"]
 [ext_resource type="FontVariation" uid="uid://cqwsdk8pf6boa" path="res://Fonts/font_negrita.tres" id="5_5vw27"]
 [ext_resource type="FontFile" uid="uid://bi23m5e21csci" path="res://Fonts/RobotoFlex-VariableFont_GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://b5cdswkts0mls" path="res://Assets/Clementina_parada.png" id="5_272bh"]
 [ext_resource type="Script" uid="uid://c2xmrk5utsnmw" path="res://Scripts/mascot.gd" id="5_lquwl"]
 [ext_resource type="Texture2D" uid="uid://05gmnut8t3co" path="res://Assets/Tutorial/comprobacion_mail.png" id="6_4c57u"]
 [ext_resource type="Texture2D" uid="uid://c34spk53dlwq5" path="res://Assets/Clementina_saludando_izq.png" id="11_efxa6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kek77"]
-bg_color = Color(0.69813675, 0.8383168, 0.9999997, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
-bg_color = Color(0, 0.5209061, 0.895402, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [sub_resource type="Gradient" id="Gradient_efxa6"]
 colors = PackedColorArray(1, 0.8156863, 0.8, 1, 0.5372549, 0.72156864, 0.8862745, 1)
@@ -109,7 +97,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_1bvp3"]
-resource_name = "transition1"
+resource_name = "transition2"
 length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -125,7 +113,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_kek77"]
-resource_name = "transition2"
+resource_name = "transition3"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -140,7 +128,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_5vw27"]
-resource_name = "transition3"
+resource_name = "transition4"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -156,7 +144,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_efxa6"]
-resource_name = "transition4"
+resource_name = "transition5"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -172,7 +160,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_dg77c"]
-resource_name = "transition5"
+resource_name = "transition6"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -188,7 +176,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_ycdy4"]
-resource_name = "transition6"
+resource_name = "transition7"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -203,7 +191,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_w48qg"]
-resource_name = "transition7"
+resource_name = "transition8"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -221,13 +209,13 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_lquwl"),
 &"despedida": SubResource("Animation_vivmo"),
-&"transition1": SubResource("Animation_1bvp3"),
-&"transition2": SubResource("Animation_kek77"),
-&"transition3": SubResource("Animation_5vw27"),
-&"transition4": SubResource("Animation_efxa6"),
-&"transition5": SubResource("Animation_dg77c"),
-&"transition6": SubResource("Animation_ycdy4"),
-&"transition7": SubResource("Animation_w48qg")
+&"transition2": SubResource("Animation_1bvp3"),
+&"transition3": SubResource("Animation_kek77"),
+&"transition4": SubResource("Animation_5vw27"),
+&"transition5": SubResource("Animation_efxa6"),
+&"transition6": SubResource("Animation_dg77c"),
+&"transition7": SubResource("Animation_ycdy4"),
+&"transition8": SubResource("Animation_w48qg")
 }
 
 [node name="Main" type="Control"]
@@ -238,7 +226,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -260,14 +248,13 @@ theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 32
 script = ExtResource("2_1bvp3")
 
-[node name="ProgressBar" type="ProgressBar" parent="MainMargin"]
-custom_minimum_size = Vector2(0, 16)
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MainMargin"]
 layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_kek77")
-theme_override_styles/fill = SubResource("StyleBoxFlat_7dm0k")
-max_value = 14.0
-rounded = true
-show_percentage = false
+size_flags_horizontal = 4
+max_value = 15.0
+value = 1.0
+texture_under = ExtResource("3_efxa6")
+texture_progress = ExtResource("4_dg77c")
 
 [node name="TextContainer" type="MarginContainer" parent="MainMargin"]
 layout_mode = 2
@@ -391,12 +378,13 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "0.2.1"
+text = "0.2.2"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[connection signal="value_changed" from="MainMargin/ProgressBar" to="MainMargin" method="_on_progress_bar_value_changed"]
-[connection signal="value_changed" from="MainMargin/ProgressBar" to="Mascot" method="_on_progress_bar_value_changed"]
+[connection signal="value_changed" from="MainMargin/TextureProgressBar" to="MainMargin" method="_on_progress_bar_value_changed"]
+[connection signal="value_changed" from="MainMargin/TextureProgressBar" to="Mascot" method="_on_progress_bar_value_changed"]
+[connection signal="pressed" from="MainMargin/ButtonContainer/BackButton" to="MainMargin" method="_on_back_button_pressed"]
 [connection signal="pressed" from="MainMargin/ButtonContainer/MainButton" to="MainMargin" method="_on_main_button_pressed"]
 [connection signal="animation_finished" from="Mascot/MascotAnimations" to="MainMargin" method="_on_mascot_animations_animation_finished"]
 [connection signal="animation_finished" from="Mascot/MascotAnimations" to="Mascot" method="_on_mascot_animations_animation_finished"]

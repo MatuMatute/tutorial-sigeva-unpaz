@@ -14,6 +14,7 @@ const clementinaTextures: Array[Texture2D] = [
 
 const mascotDialogs: Array[String] = [
 	"",
+	"",
 	"[b]¡Bienvenido/a![/b]
 Soy Clementina y voy a ayudarte a completar tu CVar.
 ¿Estás listo/a para comenzar?",
@@ -68,96 +69,84 @@ func _on_progress_bar_value_changed(value: float) -> void:
 	textIndex = int(value);
 	texture = clementinaTextures[0];
 	
-	if (textIndex < 4): 
+	if (textIndex < 5 and textIndex > 1): 
 		show();
 		mascotAnimations.play("transition" + str(textIndex));
 	else:
 		match textIndex:
-			4:
+			5:
 				texture = clementinaTextures[2];
 				var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-408.0, -180.0), Vector2(464.0, 128.0), 464.0, mascotDialogs[textIndex], false);
 				add_child(newDialog);
-			5:
+			6:
 				texture = clementinaTextures[0];
 				var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-288.0, -180.0), Vector2(416.0, 128.0), 460.0, mascotDialogs[textIndex], true);
 				add_child(newDialog);
-			6:
+			7:
 				var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-352.0, -118.0), Vector2(460.0, 128.0), 460.0, mascotDialogs[textIndex], true);
 				add_child(newDialog);
-			7:
+			8:
 				texture = clementinaTextures[2];
 				var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-288.0, -160.0), Vector2(406.0, 128.0), 406.0, mascotDialogs[textIndex], true);
 				add_child(newDialog);
-			8:
+			9:
 				var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-288.0, -180.0), Vector2(460.0, 160.0), 500.0, mascotDialogs[textIndex], true);
 				add_child(newDialog);
-			9:
-				texture = clementinaTextures[0];
-				mascotAnimations.play("transition4");
 			10:
+				texture = clementinaTextures[0];
 				mascotAnimations.play("transition5");
 			11:
-				flip_h = false;
-				#dialogBox.pivot_offset = Vector2(390.0, 100.0);
 				mascotAnimations.play("transition6");
 			12:
-				texture = clementinaTextures[0];
-				#dialogBox.pivot_offset = Vector2(416.0, 224.0);
-				#dialogText.size = Vector2(506.0, 100.0);
-				#dialogBox.size = Vector2(506.0, 100.0);
+				flip_h = false;
 				mascotAnimations.play("transition7");
 			13:
 				texture = clementinaTextures[0];
+				mascotAnimations.play("transition8");
+			14:
+				texture = clementinaTextures[0];
 				var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-224.0, -186.0), Vector2(232.0, 180.0), 464.0, mascotDialogs[textIndex], true);
 				add_child(newDialog);
-				#dialogBox.position = Vector2(-224.0, -186.0);
-				#dialogBox.pivot_offset = Vector2(232.0, 180.0);
-				#dialogText.size = Vector2(464.0, 100.0);
-				#dialogBox.size = Vector2(464.0, 100.0);
-			14:
+			15:
 				mascotAnimations.play("despedida");
 
 func _on_mascot_animations_animation_finished(anim_name: StringName) -> void:
 	match anim_name:
-		"transition1":
+		"transition2":
 			texture = clementinaTextures[1];
 			var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(336.0, -96.0), Vector2(0.0, 119.0), 654.0, mascotDialogs[textIndex], true);
 			add_child(newDialog);
-		"transition2":
+		"transition3":
 			texture = clementinaTextures[3];
 			var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(320.0, 64.0), Vector2(0.0, 59.5), 634.0, mascotDialogs[textIndex], true);
 			add_child(newDialog);
-		"transition3":
+		"transition4":
 			texture = clementinaTextures[2];
 			var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-380.0, -140.0), Vector2(518.0, 128.0), 518.0, mascotDialogs[textIndex], true);
 			add_child(newDialog);
-		"transition4":
+		"transition5":
 			var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(320.0, -32.0), Vector2(0.0, 128.0), 570.0, mascotDialogs[textIndex], true);
 			add_child(newDialog);
-		"transition5":
+		"transition6":
 			texture = clementinaTextures[3];
 			var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-416.0, 32.0), Vector2(448.0, 100.0), 448.0, mascotDialogs[textIndex], true);
 			add_child(newDialog);
-			#dialogText.size = Vector2(448.0, 100.0);
-			#dialogBox.size = Vector2(448.0, 100.0);
 			flip_h = true;
-		"transition6":
+		"transition7":
 			texture = clementinaTextures[2];
 			var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-320.0, -96.0), Vector2(390.0, 100.0), 390.0, mascotDialogs[textIndex], true);
 			add_child(newDialog);
-			#dialogText.size = Vector2(390.0, 100.0);
-			#dialogBox.size = Vector2(390.0, 100.0);
-		"transition7":
+		"transition8":
 			texture = clementinaTextures[2];
 			var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-368.0, -192.0), Vector2(416.0, 224.0), 506.0, mascotDialogs[textIndex], false);
 			add_child(newDialog);
 
 func addDialogBox() -> void:
-	if (textIndex == 4):
+	if (textIndex == 5):
 		texture = clementinaTextures[4];
-		var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-408.0, 8.0), Vector2(464.0, 96.0), 464.0, mascotDialogs[14], true);
+		var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-408.0, 8.0), Vector2(464.0, 96.0), 464.0, mascotDialogs[15], true);
 		add_child(newDialog);
-	if (textIndex == 12):
+	if (textIndex == 13):
 		texture = clementinaTextures[0];
-		var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-368.0, 0.0), Vector2(390.0, 64.0), 390.0, mascotDialogs[11], true);
+		var newDialog = DialogBox.newDialogBox(mainMargin, Vector2(-368.0, 0.0), Vector2(390.0, 64.0), 390.0, mascotDialogs[12], true);
 		add_child(newDialog);

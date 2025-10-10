@@ -24,6 +24,7 @@ static func newDialogBox(mainMarginReference: MarginContainer, startPosition: Ve
 
 func _ready() -> void:
 	mainMargin.mainButton.pressed.connect(queue_free);
+	mainMargin.backButton.pressed.connect(queue_free);
 	dialogText.text = Dialog;
 	tweenDuration = textReadSpeed * Dialog.length();
 	var start_tween = create_tween();

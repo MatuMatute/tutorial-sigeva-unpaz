@@ -1,9 +1,10 @@
 extends MarginContainer;
 
-@onready var progressBar: ProgressBar = $ProgressBar;
+@onready var progressBar: TextureProgressBar = $TextureProgressBar;
 @onready var mainContainer: VBoxContainer = $TextContainer/MainContainer;
 @onready var title: RichTextLabel = $TextContainer/MainContainer/Title;
 @onready var description: RichTextLabel = $TextContainer/MainContainer/Description;
+@onready var imageContainer: PanelContainer = $TextContainer/MainContainer/ImageContainer;
 @onready var image: TextureRect = $TextContainer/MainContainer/ImageContainer/Image;
 @onready var main: Control = get_parent();
 @onready var mainButton: Button = $ButtonContainer/MainButton;
@@ -12,6 +13,7 @@ extends MarginContainer;
 
 const titleTexts: Array = [
 	"[b]Guía paso a paso[/b]\npara completar tu [b]CVAR[/b]",
+	"",
 	"",
 	"
 	[b]¿Qué es CVar?[/b]",
@@ -33,6 +35,7 @@ Completaste el tutorial :)",
 
 const descriptionTexts: Array = [
 	"Un [b]recorrido interactivo[/b] para que cargues tu información de manera simple y rápida.",
+	"",
 	"",
 	"
 		El [b]Curriculum Vitae Argentino[/b] (CVar) es una [b]herramienta digital[/b] donde los investigadores, docentes 
@@ -86,79 +89,98 @@ func _on_progress_bar_value_changed(value: float) -> void:
 	textIndex = int(value);
 	
 	match textIndex:
-		4:
-			$TextContainer/MainContainer/ImageContainer.show();
+		5:
+			imageContainer.show();
 			image.texture = images[0];
 			title.text = titleTexts[textIndex];
-		5:
+		6:
+			imageContainer.show();
 			image.texture = images[1];
 			title.text = titleTexts[textIndex];
-		6:
+		7:
+			imageContainer.show();
 			image.texture = images[2];
 			title.text = titleTexts[textIndex];
-		7:
+		8:
+			imageContainer.show();
 			image.texture = images[3];
 			title.text = titleTexts[textIndex];
-		8:
+		9:
+			imageContainer.show();
 			image.texture = images[4];
 			title.text = titleTexts[textIndex];
-		9:
-			$TextContainer/MainContainer/ImageContainer.hide();
-		11:
-			$TextContainer/MainContainer/ImageContainer.hide();
+		10:
+			imageContainer.hide();
 		12:
-			$TextContainer/MainContainer/ImageContainer.hide();
+			imageContainer.hide();
 		13:
+			imageContainer.hide();
+		14:
+			mainButton.text = buttonTexts[3];
+			imageContainer.show();
 			image.texture = images[8];
 			title.text = titleTexts[textIndex];
-		14:
-			$TextContainer/MainContainer/ImageContainer.hide();
+		15:
+			imageContainer.hide();
 			title.text = "";
 
 func _on_mascot_animations_animation_finished(anim_name: StringName) -> void:
 	textIndex = int(progressBar.value);
 	
 	match anim_name:
-		"transition1":
+		"transition2":
 			$TextContainer.add_theme_constant_override("margin_bottom", 32);
 			mainButton.text = buttonTexts[0];
 			title.text = titleTexts[textIndex];
 			description.text = descriptionTexts[textIndex];
-		"transition2":
+		"transition3":
 			mainContainer.alignment = BoxContainer.ALIGNMENT_BEGIN;
 			mainButton.text = buttonTexts[1];
 			$ButtonContainer.size_flags_horizontal = Control.SIZE_SHRINK_END;
 			title.text = titleTexts[textIndex];
 			description.text = descriptionTexts[textIndex];
-		"transition3":
+		"transition4":
 			mainButton.text = buttonTexts[2];
 			title.text = titleTexts[textIndex];
 			description.text = descriptionTexts[textIndex];
-		"transition5":
-			$TextContainer/MainContainer/ImageContainer.show();
+		"transition6":
+			imageContainer.show();
 			image.texture = images[5];
 			title.text = titleTexts[textIndex];
-		"transition6":
-			$TextContainer/MainContainer/ImageContainer.show();
+		"transition7":
+			imageContainer.show();
 			image.texture = images[6];
 			title.text = titleTexts[textIndex];
-		"transition7":
-			$TextContainer/MainContainer/ImageContainer.show();
-			mainButton.text = buttonTexts[3];
+		"transition8":
+			imageContainer.show();
 			image.texture = images[7];
 			title.text = titleTexts[textIndex];
 		"despedida":
+			$TextContainer.add_theme_constant_override("margin_bottom", 96);
 			title.text = titleTexts[textIndex];
-			description.text = descriptionTexts[4];
+			description.text = descriptionTexts[5];
 			mainButton.text = buttonTexts[4];
 			mainContainer.alignment = BoxContainer.ALIGNMENT_CENTER;
 			$ButtonContainer.size_flags_horizontal = Control.SIZE_SHRINK_CENTER;
 			mainButton.show();
 
 func _on_main_button_pressed() -> void:
+	if (progressBar.value < 15.0):
+		title.text = "";
+		description.text = "";
+		imageContainer.hide();
+		progressBar.set_value(progressBar.value + 1.0);
+		mainButton.hide();
+		backButton.hide();
+		infoButton.hide();
+	else:
+		get_tree().reload_current_scene();
+
+func _on_back_button_pressed() -> void:
 	title.text = "";
 	description.text = "";
-	progressBar.set_value(progressBar.value + 1.0);
+	imageContainer.hide();
+	progressBar.set_value(progressBar.value - 1.0);
 	mainButton.hide();
 	backButton.hide();
 	infoButton.hide();
