@@ -240,7 +240,7 @@ outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_dg77c"]
-line_spacing = 20.0
+line_spacing = 24.0
 font = ExtResource("9_gt3je")
 font_size = 25
 font_color = Color(0, 0, 0, 1)
@@ -331,6 +331,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Credits/MarginCredits/CreditsContainer/Back:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_2cqfq"]
 resource_name = "fade_in"
@@ -382,6 +394,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Credits/MarginCredits/CreditsContainer/Back:disabled")
+tracks/4/interp = 0
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_074og"]
 resource_name = "fade_out"
@@ -432,6 +456,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Credits/MarginCredits/CreditsContainer/Back:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_cegan"]
@@ -686,9 +722,21 @@ Directora de Pasantía y Graduados: Lic. Julia Thea
 Dirección: Eda Lía Artola
 Programación: Matías Nahuel González Sandoval
 Diseño: Florencia Belate Dietrich
-Coordinación: Néstor Arriola
-Haz click para regresar a la guía"
+Coordinación: Néstor Arriola"
 label_settings = SubResource("LabelSettings_dg77c")
+
+[node name="Back" type="Button" parent="Credits/MarginCredits/CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05490196, 0.27058825, 0.34117648, 1)
+theme_override_colors/font_focus_color = Color(0.101960786, 0.40784314, 0.50980395, 1)
+theme_override_colors/font_pressed_color = Color(0.101960786, 0.40784314, 0.50980395, 1)
+theme_override_colors/font_hover_color = Color(0.1022296, 0.40903553, 0.50954115, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.101960786, 0.40784314, 0.50980395, 1)
+theme_override_colors/font_disabled_color = Color(0.05490196, 0.27058825, 0.34117648, 1)
+theme_override_fonts/font = ExtResource("9_gt3je")
+theme_override_font_sizes/font_size = 24
+text = "Atrás"
+flat = true
 
 [node name="Version" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.235294)
@@ -703,7 +751,7 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "v1.0.1"
+text = "v1.0.2"
 horizontal_alignment = 2
 vertical_alignment = 2
 
@@ -762,3 +810,4 @@ autoplay = "splash_screen"
 [connection signal="pressed" from="MainMargin/Info" to="." method="_on_info_pressed"]
 [connection signal="animation_finished" from="Mascot/MascotAnimations" to="MainMargin" method="_on_mascot_animations_animation_finished"]
 [connection signal="animation_finished" from="Mascot/MascotAnimations" to="Mascot" method="_on_mascot_animations_animation_finished"]
+[connection signal="pressed" from="Credits/MarginCredits/CreditsContainer/Back" to="." method="_on_back_pressed"]
