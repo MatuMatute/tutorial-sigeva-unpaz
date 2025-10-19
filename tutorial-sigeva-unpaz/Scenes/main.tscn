@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://q00la62s5ldb"]
+[gd_scene load_steps=44 format=3 uid="uid://q00la62s5ldb"]
 
 [ext_resource type="Script" uid="uid://cp4jaovs7nalj" path="res://Scripts/main.gd" id="1_wsu2k"]
 [ext_resource type="Texture2D" uid="uid://c2jxpj223g87v" path="res://Assets/Fondos/fondo_guia.png" id="2_k12tt"]
@@ -236,13 +236,25 @@ corner_radius_bottom_left = 64
 font = ExtResource("9_gt3je")
 font_size = 40
 font_color = Color(0, 0, 0, 1)
-outline_size = 3
+outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_dg77c"]
-line_spacing = 24.0
+line_spacing = 18.0
 font = ExtResource("9_gt3je")
 font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b3802"]
+font = ExtResource("9_gt3je")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fevyy"]
+font = ExtResource("9_gt3je")
+font_size = 20
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_yaehf"]
@@ -677,7 +689,7 @@ libraries = {
 [node name="Credits" type="Panel" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(1088, 544)
+custom_minimum_size = Vector2(1088, 608)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -706,7 +718,7 @@ theme_override_constants/margin_bottom = 32
 
 [node name="CreditsContainer" type="VBoxContainer" parent="Credits/MarginCredits"]
 layout_mode = 2
-theme_override_constants/separation = 24
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Team" type="Label" parent="Credits/MarginCredits/CreditsContainer"]
@@ -719,11 +731,25 @@ layout_mode = 2
 text = "Secretaria Académica: Lic. Paula Zabaleta
 Directora General de Acceso y Apoyo al Estudiante: Lic. Luciana Aguilar
 Directora de Pasantía y Graduados: Lic. Julia Thea
-Dirección: Eda Lía Artola
-Programación: Matías Nahuel González Sandoval
-Diseño: Florencia Belate Dietrich
-Coordinación: Néstor Arriola"
+Dirección: Mg. Eda Lía Artola
+Coordinación: Prof. Néstor Arriola"
 label_settings = SubResource("LabelSettings_dg77c")
+
+[node name="Career" type="Label" parent="Credits/MarginCredits/CreditsContainer"]
+layout_mode = 2
+text = "Estudiantes de la Lic. en Producción y Desarrollo de Videojuegos"
+label_settings = SubResource("LabelSettings_b3802")
+
+[node name="Students" type="Label" parent="Credits/MarginCredits/CreditsContainer"]
+layout_mode = 2
+text = "Diseño: Florencia Belate Dietrich
+Programación: Matías Nahuel González Sandoval"
+label_settings = SubResource("LabelSettings_dg77c")
+
+[node name="Incubadora" type="Label" parent="Credits/MarginCredits/CreditsContainer"]
+layout_mode = 2
+text = "Este proyecto fue desarrollado en los espacios de la INCUBADORA DE PROYECTOS UNPAZ"
+label_settings = SubResource("LabelSettings_fevyy")
 
 [node name="Back" type="Button" parent="Credits/MarginCredits/CreditsContainer"]
 layout_mode = 2
@@ -751,7 +777,7 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "v1.0.2"
+text = "v1.0.3"
 horizontal_alignment = 2
 vertical_alignment = 2
 
